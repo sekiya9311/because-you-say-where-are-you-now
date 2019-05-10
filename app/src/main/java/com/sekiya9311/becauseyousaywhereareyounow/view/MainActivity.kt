@@ -1,7 +1,8 @@
-package com.sekiya9311.becauseyousaywhereareyounow
+package com.sekiya9311.becauseyousaywhereareyounow.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sekiya9311.becauseyousaywhereareyounow.R
 
 class MainActivity : AppCompatActivity() {
 
