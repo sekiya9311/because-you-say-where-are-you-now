@@ -8,26 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.sekiya9311.becauseyousaywhereareyounow.R
-import com.sekiya9311.becauseyousaywhereareyounow.viewmodel.SendSettingViewModel
+import com.sekiya9311.becauseyousaywhereareyounow.viewmodel.DestSettingViewModel
 
-class SendSettingFragment : Fragment() {
+class DestSettingFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SendSettingFragment()
+        fun newInstance() = DestSettingFragment()
     }
 
-    private lateinit var viewModel: SendSettingViewModel
+    private lateinit var viewModel: DestSettingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.send_setting_fragment, container, false)
+        return inflater.inflate(R.layout.dest_setting_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SendSettingViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(DestSettingViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
