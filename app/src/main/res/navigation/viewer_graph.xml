@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/viewer_graph"
+            app:startDestination="@id/sendSettingFragment">
+
+    <fragment android:id="@+id/sendSettingFragment"
+              android:name="com.sekiya9311.becauseyousaywhereareyounow.view.SendSettingFragment"
+              android:label="send_setting_fragment" tools:layout="@layout/send_setting_fragment">
+        <argument
+                android:name="destinationMailAddressId"
+                app:argType="integer"
+                android:defaultValue="-1"/>
+    </fragment>
+    <fragment android:id="@+id/destSettingFragment"
+              android:name="com.sekiya9311.becauseyousaywhereareyounow.view.DestSettingFragment"
+              android:label="DestSettingFragment">
+        <action android:id="@+id/action_destSettingFragment_to_sendSettingFragment"
+                app:destination="@id/sendSettingFragment"/>
+    </fragment>
+</navigation>

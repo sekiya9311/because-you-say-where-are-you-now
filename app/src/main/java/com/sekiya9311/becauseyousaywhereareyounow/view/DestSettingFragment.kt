@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 
 import com.sekiya9311.becauseyousaywhereareyounow.R
 import com.sekiya9311.becauseyousaywhereareyounow.databinding.DestSettingListItemBinding
@@ -15,7 +16,6 @@ import com.sekiya9311.becauseyousaywhereareyounow.databinding.DestSettingFragmen
 import com.sekiya9311.becauseyousaywhereareyounow.entity.DestSetting
 import com.sekiya9311.becauseyousaywhereareyounow.viewmodel.DestSettingViewModel
 import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.databinding.BindableItem
 import com.xwray.groupie.databinding.ViewHolder
 
@@ -62,8 +62,13 @@ class DestSettingFragment : Fragment() {
         override fun bind(itemBinding: DestSettingListItemBinding, pos: Int) {
             itemBinding.srcMailAddress = item.srcMailAddress
 
-            itemBinding.root.setOnClickListener {
-                // TODO: move SendSettingFragment
+            itemBinding.root.setOnClickListener { view ->
+                Navigation.findNavController(view).navigate(
+                    DestSettingFragmentDirections
+                        .actionDestSettingFragmentToSendSettingFragment().apply {
+                            destinationMailAddressId = pos
+                        }
+                )
             }
         }
     }
