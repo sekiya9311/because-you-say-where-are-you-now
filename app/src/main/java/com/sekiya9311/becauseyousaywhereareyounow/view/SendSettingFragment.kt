@@ -28,7 +28,12 @@ class SendSettingFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(SendSettingViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        arguments?.run {
+            val selectedDestPos = SendSettingFragmentArgs.fromBundle(this).destinationMailAddressId
+            if (selectedDestPos > -1) {
+                viewModel.selectedDestinationMailAddressId = selectedDestPos
+            }
+        } ?: return
+    }
 }
