@@ -6,17 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 
 import com.sekiya9311.becauseyousaywhereareyounow.R
 import com.sekiya9311.becauseyousaywhereareyounow.viewmodel.SendSettingViewModel
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class SendSettingFragment : Fragment() {
+class SendSettingFragment : DaggerFragment() {
 
     companion object {
         fun newInstance() = SendSettingFragment()
     }
 
-    private lateinit var viewModel: SendSettingViewModel
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: SendSettingViewModel by lazy {
+        ViewModelProviders
+            .of(this, viewModelFactory)
+            .get(SendSettingViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +35,6 @@ class SendSettingFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SendSettingViewModel::class.java)
 
         arguments?.run {
             val selectedDestPos = SendSettingFragmentArgs.fromBundle(this).destinationMailAddressId
