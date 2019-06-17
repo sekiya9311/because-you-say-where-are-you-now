@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel;
 import com.sekiya9311.becauseyousaywhereareyounow.db.sourcemailaddress.SourceMailAddress
 import com.sekiya9311.becauseyousaywhereareyounow.entity.DestSetting
 import com.sekiya9311.becauseyousaywhereareyounow.model.interfaces.MailSettingService
-import com.sekiya9311.becauseyousaywhereareyounow.model.interfaces.SettingRepository
 import javax.inject.Inject
 
 class DestSettingViewModel @Inject constructor() : ViewModel() {

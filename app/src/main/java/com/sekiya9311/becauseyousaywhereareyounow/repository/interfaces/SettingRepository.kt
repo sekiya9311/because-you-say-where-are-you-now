@@ -1,4 +1,4 @@
-package com.sekiya9311.becauseyousaywhereareyounow.model.interfaces
+package com.sekiya9311.becauseyousaywhereareyounow.repository.interfaces
 
 import com.sekiya9311.becauseyousaywhereareyounow.entity.DestSetting
 
