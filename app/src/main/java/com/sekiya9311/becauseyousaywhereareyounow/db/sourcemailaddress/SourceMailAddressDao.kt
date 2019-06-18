@@ -17,4 +17,7 @@ interface SourceMailAddressDao {
     @Query("SELECT * FROM source_mail_addresses WHERE id=:id LIMIT 1")
     fun fetch(id: Int): SourceMailAddress
 
+    @Query("SELECT * FROM source_mail_addresses LIMIT 1")
+    fun fetch(): SourceMailAddress
+
 }
