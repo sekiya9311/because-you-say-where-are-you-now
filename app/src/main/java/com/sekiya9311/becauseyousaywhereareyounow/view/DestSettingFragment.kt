@@ -60,7 +60,7 @@ class DestSettingFragment : DaggerFragment() {
         }
 
         val groupAdapter = GroupAdapter<ViewHolder<*>>()
-        binding.recyclerView.adapter = groupAdapter
+        binding.recyclerViewOfDestSetting.adapter = groupAdapter
 
         viewModel.destSettings.observe(viewLifecycleOwner, Observer { setting ->
             val convertedDestSettings = setting.map { DisplayItemOfDestSetting(it) }
