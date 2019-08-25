@@ -37,6 +37,9 @@ android {
     repositories {
         jcenter()
     }
+    configurations{
+        all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
 }
 
 dependencies {
@@ -75,8 +78,7 @@ dependencies {
 
     implementation 'com.sun.mail:android-mail:1.6.3'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
-    // TODO: 下の子たちがいるとmakeでエラーになる(依存の何かがdeprecate?)
-//    implementation 'com.google.api-client:google-api-client-android:1.28.0'
-//    implementation 'com.google.api-client:google-api-client-gson:1.28.0'
-//    implementation 'com.google.apis:google-api-services-gmail:v1-rev103-1.25.0'
+    implementation 'com.google.api-client:google-api-client-android:1.28.0'
+    implementation 'com.google.api-client:google-api-client-gson:1.28.0'
+    implementation 'com.google.apis:google-api-services-gmail:v1-rev103-1.25.0'
 }
